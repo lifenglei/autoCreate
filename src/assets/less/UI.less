@@ -1,0 +1,210 @@
+.radio {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  margin-right: 3px;
+  z-index: 1;
+  cursor: pointer;
+  visibility: hidden;
+  &:checked {
+    &::before {
+      background-color: #1fdcc6;
+      border: 1px solid #1fdcc6;
+    }
+    &::after {
+      content: '';
+      width: 6px;
+      height: 3px;
+      border-left: 2px #ffffff solid;
+      border-bottom: 2px #ffffff solid;
+      position: absolute;
+      left: 0px;
+      top: -2px;
+      right: -1px;
+      bottom: 0px;
+      margin: auto;
+      z-index: 3;
+      transform: rotateZ(-45deg);
+      visibility: initial;
+    }
+  }
+  &::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border: 1px solid #aaabb3;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: 50%;
+    z-index: 2;
+    visibility: initial;
+  }
+}
+
+.switch {
+  position: relative;
+  width: 36px;
+  height: 22px;
+  border: 0px;
+  outline: none;
+  box-sizing: border-box;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: inline-block;
+  visibility: hidden;
+  &::after {
+    content: '';
+    width: 36px;
+    height: 22px;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: 1px rgba(148, 148, 148, 0.2) solid;
+    background-color: #f1f0f0;
+    font-size: 40px;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+    z-index: 2;
+    box-sizing: border-box;
+    visibility: initial;
+  }
+  &::before {
+    content: ' ';
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px rgba(204, 204, 204, 0.42) solid;
+    border-radius: 50%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+    transform: translateX(0px);
+    transition: transform 0.25s;
+    z-index: 3;
+    cursor: pointer;
+    box-sizing: border-box;
+    visibility: initial;
+  }
+  &:checked {
+    &::before {
+      transform: translateX(15px);
+    }
+    &:after {
+      background-color: #1fdcc6;
+    }
+  }
+}
+
+.compatibleIphoneX {
+  width: 100%;
+  height: 34px;
+  display: none;
+}
+//iphone x和xs
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .compatibleIphoneX {
+    display: block;
+  }
+}
+//iphone xs max
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+  .compatibleIphoneX {
+    display: block;
+  }
+}
+//iphone xr
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .compatibleIphoneX {
+    display: block;
+  }
+}
+
+.skeleton {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: #cccccc;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+  -webkit-mask-size: 200% 100%;
+  mask-size: 200% 100%;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-position: 50% top;
+  mask-position: 50% top;
+  animation: skeleton-effect-blink 1s infinite;
+}
+@keyframes skeleton-effect-blink {
+  0% {
+    -webkit-mask-position: 50% top;
+    mask-position: 50% top;
+  }
+  100% {
+    -webkit-mask-position: -150% top;
+    mask-position: -150% top;
+  }
+}
+
+.pageHeader {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px #d6d6d6 solid;
+  background-color: #ffffff;
+  flex-shrink: 0;
+  h2 {
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #333333;
+  }
+  span {
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: #777777;
+    width: 50px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    &:active {
+      color: #666666;
+    }
+    &.disabled {
+      color: #dedede;
+      &:active {
+        color: #dedede;
+      }
+    }
+    &.ready {
+      color: #1fdcc6;
+      &:active {
+        color: #1ebdab;
+      }
+    }
+  }
+}
+
+.titleLabel {
+  width: calc(100% - 30px);
+  height: 24px;
+  line-height: 24px;
+  font-family: PingFangSC-Medium;
+  font-size: 17px;
+  color: #333333;
+  margin: 0 auto;
+  margin-top: 25px;
+}

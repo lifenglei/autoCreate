@@ -1,0 +1,14 @@
+{
+  "_readme": "此文件用于提升 vscode 开发体验, 如完善别名引用模块的代码补全",
+  "_docs": "https://code.visualstudio.com/docs/languages/jsconfig",
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"]
+}
