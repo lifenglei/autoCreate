@@ -12,7 +12,6 @@
   "lint-staged": {
     "*.{js,json,css,less,vue,html}": [
       "prettier file --write",
-      "npm run lint",
       "git add"
     ]
   },

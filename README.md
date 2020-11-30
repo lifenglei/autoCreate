@@ -5,11 +5,15 @@
 ```
 ##### 第二步
 ```
-    npm link
+    npm run serve
 ```
 ##### 第三步
 ```
-    syp
+    npm link
+```
+##### 第四步
+```
+    syp xxx(xxx代表指令)
 ```
 ##### 指令说明
 ```
