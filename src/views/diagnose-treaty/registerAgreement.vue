@@ -1,16 +1,13 @@
 <template>
   <div class="all">
     <h2>
-      您在点击同意本协议之前，应当认真阅读本协议。请您务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款、法律适用和争议解决条款。免除或者限制责任的条款将以粗体下划线标识，您应重点阅读。
+      恭喜 项目创建成功
     </h2>
-    
   </div>
 </template>
 <script>
 export default {
-  mounted() {
-    
-  }
+  mounted() {}
 }
 </script>
 <style lang="less" scoped>

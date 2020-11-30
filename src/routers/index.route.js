@@ -6,7 +6,7 @@ export default [
    *  @params
    */
   {
-    path: '/registeragreement',
+    path: '/',
     component: () => import('@/views/diagnose-treaty/registerAgreement')
   }
 ]
